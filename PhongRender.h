@@ -1,7 +1,9 @@
 #pragma once
+#include "Phong.h"
 #include <QOpenGLWidget>
-#include <QOpenGLFunctions>
-class PhongRender :public QOpenGLWidget, protected QOpenGLFunctions
+#include <iostream>
+
+class PhongRender :public QOpenGLWidget
 {
 	Q_OBJECT
 public:
@@ -11,4 +13,7 @@ protected:
 	virtual void initializeGL() override;
 	virtual void paintGL() override;
 	virtual void resizeGL(int w, int h) override;
+private:
+	Phong *render;
+
 };

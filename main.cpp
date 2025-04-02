@@ -1,11 +1,13 @@
 #include "Title.h"
 #include <QtWidgets/QApplication>
-
+#include <QSurfaceFormat>
 int main(int argc, char *argv[])
 {
-    QGuiApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
-    QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
-    QApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
+    QSurfaceFormat format;
+    format.setVersion(3, 3); //  OpenGL °æ±¾
+    format.setProfile(QSurfaceFormat::CoreProfile);
+    QSurfaceFormat::setDefaultFormat(format);
+
     QApplication a(argc, argv);
     Title w;
     w.show();

@@ -28,7 +28,7 @@ void PhongSetting::on_Select_path(QString &s,QLabel *Label)
 {
 	s = QFileDialog::getOpenFileName(this,
 		QStringLiteral("选择贴图文件"),
-		"C:/",
+		"res/textures/textures",
 		tr("images(*.png *jpeg *bmp);"));
 	Label->setText(QStringLiteral("路径：")+s);
 	if (s.isEmpty()) {

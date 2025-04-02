@@ -2,7 +2,6 @@
 
 #include <QWidget>
 #include "ui_PhongSetting.h"
-
 class PhongSetting : public QWidget
 {
 	Q_OBJECT
