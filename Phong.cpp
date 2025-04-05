@@ -24,7 +24,7 @@ void Phong::init()
     texture_d.Bind(GL_TEXTURE0);
     texture_n.Bind(GL_TEXTURE1);
     texture_s.Bind(GL_TEXTURE2);
-    char obj_path[] = "res/models/woodball.obj";
+    char obj_path[] = "res/models/128_ball.obj";
     ball=new Model(obj_path);
 
 
@@ -52,4 +52,10 @@ void Phong::paint()
 
 Phong::Phong(std::string d, std::string n, std::string s, unsigned int width, unsigned int height):diffuse(d),normal(n),specular(s),width(width),height(height)
 {
+}
+
+Phong::~Phong()
+{
+    delete ball;
+    delete phong_shader;
 }

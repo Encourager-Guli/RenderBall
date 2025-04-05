@@ -2,7 +2,8 @@
 
 #include <QWidget>
 #include "ui_Title.h"
-
+#include"PhongSetting.h"
+#include"PBRSetting.h"
 class Title : public QWidget
 {
 	Q_OBJECT
@@ -13,4 +14,5 @@ public:
 
 private:
 	Ui::TitleClass ui;
+	QWidget* q;
 };

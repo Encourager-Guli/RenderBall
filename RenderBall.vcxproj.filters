@@ -67,6 +67,18 @@
     <ClCompile Include="Dependencies\tools\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PBRSetting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PBRRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PBR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dependencies\tools\VAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="PhongSetting.h">
@@ -75,9 +87,18 @@
     <QtMoc Include="PhongRender.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="PBRSetting.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PBRRender.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="PhongSetting.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="PBRSetting.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -353,6 +374,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dependencies\tools\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PBR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\tools\VAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

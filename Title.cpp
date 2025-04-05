@@ -1,5 +1,5 @@
 #include "Title.h"
-#include"PhongSetting.h"
+
 Title::Title(QWidget *parent)
 	: QWidget(parent)
 {
@@ -7,11 +7,21 @@ Title::Title(QWidget *parent)
 	connect(ui.PhongButtom, &QPushButton::clicked, [this]()
 		{
 			this->hide();
-			PhongSetting* p = new PhongSetting();
-			p->show();
+			q = new PhongSetting();
+			q->show();
 
 		});
+	connect(ui.PBRButtom, &QPushButton::clicked, [this]()
+		{
+			this->hide();
+			q = new PBRSetting();
+			q->show();
+
+		});
+
 }
 
 Title::~Title()
-{}
+{
+	delete(q);
+}

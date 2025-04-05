@@ -1,7 +1,5 @@
 #include "PhongSetting.h"
-#include <QFileDialog>   //文件对话框
-#include <QMessageBox>
-#include "PhongRender.h"
+
 PhongSetting::PhongSetting(QWidget *parent)
 	: QWidget(parent)
 {
@@ -22,14 +20,16 @@ PhongSetting::PhongSetting(QWidget *parent)
 }
 	
 PhongSetting::~PhongSetting()
-{}
+{
+	delete(p);
+}
 
-void PhongSetting::on_Select_path(QString &s,QLabel *Label)
+void PhongSetting::on_Select_path(QString &s,QLabel *Label,QString format)
 {
 	s = QFileDialog::getOpenFileName(this,
 		QStringLiteral("选择贴图文件"),
 		"res/textures/textures",
-		tr("images(*.png *jpeg *bmp);"));
+		format);
 	Label->setText(QStringLiteral("路径：")+s);
 	if (s.isEmpty()) {
 		QMessageBox::warning(this, "Warning!", "Failed to open the file");
@@ -39,7 +39,7 @@ void PhongSetting::on_Select_path(QString &s,QLabel *Label)
 void PhongSetting::start_render()
 {
 	this->hide();
-	PhongRender* p = new PhongRender(diffuse,normal,highlight);
+	p = new PhongRender(diffuse,normal,highlight);
 	p->show();
 
 }

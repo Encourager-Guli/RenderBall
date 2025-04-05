@@ -66,6 +66,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\opgl\RenderBall\Dependencies\tools;D:\opgl\RenderBall\Dependencies\assimp;D:\opgl\RenderBall\Dependencies\glad\include;D:\opgl\RenderBall\Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4828</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>D:\opgl\RenderBall\Dependencies\assimp\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -75,6 +76,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\opgl\RenderBall\Dependencies\tools;D:\opgl\RenderBall\Dependencies\assimp;D:\opgl\RenderBall\Dependencies\glad\include;D:\opgl\RenderBall\Dependencies\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4828</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>D:\opgl\RenderBall\Dependencies\assimp\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -116,9 +118,14 @@
     <ClCompile Include="Dependencies\tools\Shader.cpp" />
     <ClCompile Include="Dependencies\tools\stb_includer.cpp" />
     <ClCompile Include="Dependencies\tools\Texture.cpp" />
+    <ClCompile Include="Dependencies\tools\VAO.cpp" />
+    <ClCompile Include="PBR.cpp" />
+    <ClCompile Include="PBRRender.cpp" />
+    <ClCompile Include="PBRSetting.cpp" />
     <ClCompile Include="Phong.cpp" />
     <ClCompile Include="Title.cpp" />
     <QtRcc Include="Title.qrc" />
+    <QtUic Include="PBRSetting.ui" />
     <QtUic Include="PhongSetting.ui" />
     <ClCompile Include="PhongRender.cpp" />
     <ClCompile Include="PhongSetting.cpp" />
@@ -225,6 +232,10 @@
     <ClInclude Include="Dependencies\tools\Shader.h" />
     <ClInclude Include="Dependencies\tools\stb_image.h" />
     <ClInclude Include="Dependencies\tools\Texture.h" />
+    <QtMoc Include="PBRSetting.h" />
+    <QtMoc Include="PBRRender.h" />
+    <ClInclude Include="Dependencies\tools\VAO.h" />
+    <ClInclude Include="PBR.h" />
     <ClInclude Include="Phong.h" />
   </ItemGroup>
   <ItemGroup>
