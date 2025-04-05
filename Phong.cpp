@@ -1,4 +1,5 @@
 #include "Phong.h"
+#include<QTime>
 void Phong::init()
 {
     
@@ -7,13 +8,14 @@ void Phong::init()
         std::cout<<("glad init failed!");
         
     }
+    
     phong_shader= new Shader("res/shaders/phong.vs", "res/shaders/phong.fs");
     phong_shader->use();
     camera = Camera(glm::vec3(0.0f, 0.0f, 5.0f));
     glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)width / (float)height, 0.1f, 100.0f);
     glm::mat4 view = camera.GetViewMatrix();
     glm::mat4 model = glm::mat4(1.0f);
-    glm::vec3 lightPos(1.0f, 4.0f, 5.0f);
+    //glm::vec3 lightPos(1.0f, 4.0f, 5.0f);
     
     
     Texture texture_d(diffuse.c_str(),GL_REPEAT);
@@ -30,7 +32,6 @@ void Phong::init()
     phong_shader->setInt("normalMap", 1);
     phong_shader->setInt("specularMap", 2);
     phong_shader->setVec3("viewPos", camera.Position);
-    phong_shader->setVec3("lightPos", lightPos); 
     phong_shader->setMat4("model", model);
     phong_shader->setMat4("projection", projection);
     phong_shader->setMat4("view", view);
@@ -39,8 +40,11 @@ void Phong::init()
 }
 
 void Phong::paint()
-{
+{   
+    float time = QTime::currentTime().msecsSinceStartOfDay();
+    glm::vec3 lightPos(2.0*glm::cos(time/500), 1.0f, 2.0*glm::sin(time/500));
     phong_shader->use();
+    phong_shader->setVec3("lightPos", lightPos);
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     ball->Draw();

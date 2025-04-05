@@ -2,7 +2,7 @@
 #include "Phong.h"
 #include <QOpenGLWidget>
 #include <iostream>
-
+#include<QTimer>
 class PhongRender :public QOpenGLWidget
 {
 	Q_OBJECT
@@ -15,5 +15,5 @@ protected:
 	virtual void resizeGL(int w, int h) override;
 private:
 	Phong *render;
-
+	QTimer *timer;
 };
